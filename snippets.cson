@@ -41,3 +41,18 @@
     '<pre> + print':
         'prefix': 'preprint'
         'body': 'echo \'<pre>\', print_r($1, true), \'</pre>\';'
+
+    'array to csv':
+        'prefix': 'arraycsv'
+        'body': """
+            header('Content-Type: text/csv; charset=utf-8');
+            header('Content-Disposition: attachment; filename=data.csv');
+
+            $csv = "Headers,Go,Here";
+
+            foreach ($array as $row) {
+                $csv .= sprintf('%s,%s,%s', $row[0], $row[1], $row[2]);
+            }
+
+            die($csv);
+        """
