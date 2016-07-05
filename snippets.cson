@@ -38,6 +38,12 @@
             */
         """
 
+    'WordPress Page Template':
+        'prefix': 'wptemplate'
+        'body': """
+            /* Template Name: $1 */
+        """
+
     '<pre> + print':
         'prefix': 'preprint'
         'body': 'echo \'<pre>\', print_r($1, true), \'</pre>\';'
